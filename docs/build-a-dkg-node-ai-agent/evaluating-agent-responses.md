@@ -4,12 +4,12 @@ description: A step-by-step guide to evaluating your agent responses
 
 # Evaluating agent responses
 
-Evaluating your DKG Agent is a recommended quality control step which helps you understand how well your custom agent performs on various retrieval metrics. The DKG Node comes together with the premier AI Agent RAG evaluation framework, called Ragas, which you can use to evaluate how well your agent responds.
+Evaluating your DKG Agent is a recommended quality control step which helps you understand how well your custom agent performs on various retrieval metrics. The DKG Node comes together with the premier AI Agent RAG evaluation framework, called RAGAS, which you can use to evaluate how well your agent responds.
 
 ## What is RAGAS, and what is it used for?
 
 [RAGAS](https://www.ragas.io/) (Retrieval Augmented Generation Assessment) is a framework for evaluating how well an AI agent answers questions, especially those that use knowledge bases or document retrieval. Think of it as a quality control system that checks whether your agent is doing its job properly. It measures if the agent finds the right information from available knowledge, gives accurate and relevant answers, stays truthful to the source material without making things up, and actually addresses what the user asked.\
-For the DKG Node, RAGAS helps ensure that the DKG Agent provides high-quality, reliable answers about decentralized knowledge graphs, blockchain publishing, and related topics. It's essentially an automated testing system that makes sure your AI isn't hallucinating information or giving irrelevant responses.
+For the DKG Node, RAGAS helps ensure that the DKG Agent provides high-quality, reliable answers about decentralized knowledge graphs, blockchain publishing, and related topics. It's essentially an automated testing system that ensures your AI isn't hallucinating or giving irrelevant responses.
 
 ### RAGAS metrics explained
 
@@ -50,11 +50,23 @@ The JSON file contains an array of test cases, each with questions, answers, gro
 
 ### What each field means
 
-Think of the dataset as having four parallel lists that all work together. Questions are the prompts you're testing ("What is DKG Node?"), ground\_truths are your ideal answers — the gold standard you're measuring against, contexts are the documentation or knowledge your AI should be using to answer, answers should contain actual responses from your DKG Node for each question.
+Think of the dataset as a set of four parallel lists that work together:
+
+* **Questions** are the prompts you're testing ("What is DKG Node?"),&#x20;
+* **Ground\_truths** are your ideal answers — the gold standard you're measuring against,&#x20;
+* **Contexts** are the documentation or knowledge your AI should be using to answer,&#x20;
+* **Answers** should contain actual responses from your DKG Node for each question.
 
 ### Adding new questions step by step
 
-Adding a new test question is straightforward. Start by putting your question in the questions array. Then write what you consider the perfect answer and add it to ground\_truths. Next, include any relevant documentation in the contexts array — this is the source material your AI should reference. For the answers field, you need to manually add the actual response from your DKG Node. You can get this by asking your DKG Node the question directly and copying the response, or you can run a test session to see what it generates and then add that to the array. Just remember: all four arrays need to stay in sync. The first item in each array corresponds to the same test case.
+Adding a new test question is straightforward:&#x20;
+
+* Start by putting your question in the questions array.&#x20;
+* Then write what you consider the perfect answer and add it to ground\_truths.&#x20;
+* Next, include any relevant documentation in the contexts array — this is the source material your AI should reference.&#x20;
+* For the answers field, you need to manually add the actual response from your DKG Node. You can get this by asking your DKG Node the question directly and copying the response, or you can run a test session to see what it generates, then add that to the array.&#x20;
+
+Just remember: all four arrays need to stay in sync. The first item in each array corresponds to the same test case.
 
 ### Configuration settings&#x20;
 

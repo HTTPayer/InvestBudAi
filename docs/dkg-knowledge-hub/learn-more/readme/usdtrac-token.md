@@ -45,10 +45,10 @@ Your node needs **both** to operate — TRAC to publish verifiable data and the 
 
 ***
 
-#### Next step: Build your AI agent with the DKG Node or learn about staking in Origintrail
+#### Next step: Build your AI agent with the DKG Node or learn about staking in OriginTrail
 
 Now that you understand what a DKG Node is and how it’s powered by $TRAC, you’re ready to take action.
 
-If you’d like to start building right away, jump ahead to the “[Build your AI agent with the DKG Node](https://app.gitbook.com/o/-McnF-Jcg4utndKcdeko/s/-McnEkhdd7JlySeckfHM/~/changes/408/build-your-ai-agent-with-the-dkg-node)” section — where you’ll set up, install, and configure your own DKG Node to connect with AI models.
+If you’d like to start building right away, jump ahead to the “[Installation](../../../getting-started/decentralized-knowle-dge-graph-dkg.md)” section — where you’ll set up, install, and configure your own DKG Node to connect with AI models.
 
-Or, if you want to learn more about tokenomics first, continue to “[Operator staking & delegated staking](https://app.gitbook.com/o/-McnF-Jcg4utndKcdeko/s/-McnEkhdd7JlySeckfHM/~/changes/408/get-started-with-dkg-node/usdtrac-powering-the-knowledge-economy/delegated-staking)” to explore how staking works across the OriginTrail ecosystem and how it powers trust, security, and participation.
+Or, if you want to learn more about tokenomics first, continue to “[Delegated staking](../../../contribute-to-the-dkg/delegated-staking/)” to explore how staking works across the OriginTrail ecosystem and how it powers trust, security, and participation.

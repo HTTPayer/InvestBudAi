@@ -16,11 +16,11 @@ More information on NEURO can be found in the [official NeuroWeb documentation](
 
 To use TRAC tokens on NeuroWeb for powering your nodes, staking, or other activities, you need to bridge TRAC to NeuroWeb.&#x20;
 
-Teleport interface has been launched in order to allow users to transfer TRAC tokens from Ethereum to NeuroWeb and vice versa. More information on [teleport is available here](../../../graveyard/everything/teleport-instructions-neuroweb.md).
+You can transfer TRAC tokens from Ethereum to NeuroWeb and vice versa via [Snowbridge](https://app.snowbridge.network/).
 
 ## Adding TRAC on NeuroWeb to your wallet
 
-Here are step-by-step instructions for adding the TRAC token on NeuroWeb to your wallet (in this case Metamask). These instructions and TRAC token address are the same for both NeuroWeb mainnet and testnet.
+Here are step-by-step instructions for adding the TRAC token on NeuroWeb to your wallet (in this case Metamask). These instructions and the TRAC token address are the same for both the NeuroWeb mainnet and testnet.
 
 TRAC token address: 0xFfFFFFff00000000000000000000000000000001
 

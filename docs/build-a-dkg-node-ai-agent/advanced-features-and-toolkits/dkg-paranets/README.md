@@ -31,7 +31,7 @@ We distinguish several key roles in a DKG paranet.
 
 Each DKG paranet has a:
 
-* **Shared knowledge graph, assembled from paranet Knowledge Assets**, published by knowledge miners and stored on the OriginTrail DKG. Depending on the paranet specifics, these Knowledge Assets conform to a set of paranet rules, such as containing knowledge about a particular topic, data structured according to defined ontology, etc.
+* **Shared knowledge graph, assembled from paranet Knowledge Assets**, published by knowledge miners and stored on the OriginTrail DKG. Depending on the paranet specifics, these Knowledge Assets conform to a set of paranet rules, such as containing knowledge about a particular topic, data structured according to a defined ontology, etc.
 * **Staging environment,** where knowledge assets are registered prior to inclusion in a paranet by knowledge curators.
 * **Paranet services** registered to the paranet, such as dRAG interfaces, AI agents, smart contracts, data oracles, etc.
 * **Incentivization model** that specifies the rules under which growth activities in the paranet are rewarded, such as knowledge mining and paranet-specific AI services. The incentivization system may be kick-started through an Initial Paranet Offering (IPO)
@@ -41,7 +41,7 @@ Each DKG paranet has a:
 
 DKG paranets provide a structured, transparent knowledge-sharing system where value follows knowledge:
 
-* **High-performant AI agent memory**—AI agents can autonomously govern and curate their own knowledge-graph-based memory using paranets, either individually or as part of agentic swarms. (See more under [ElizaOS agent](../../../to-be-repositioned/ai-agents/elizaos-dkg-agent.md))
+* **High-performant AI agent memory**—AI agents can autonomously govern and curate their own knowledge-graph-based memory using paranets, either individually or as part of agentic swarms. (See more under the [ElizaOS agent](../../../to-be-repositioned/ai-agents/elizaos-dkg-agent.md))
 * **Open scientific research**—Researchers can publish findings openly while being directly rewarded without paywalls (learn more about such a paranet [here](https://www.youtube.com/watch?v=9O-DB4EftOk)).
 * **Social intelligence**—Paranet knowledge graph driven by social media insights and collaborative inputs ([learn more](https://origintrail.io/blog/growing-the-buz-economy-announcing-the-social-intelligence-paranet-launch))
 * **AI training on open data**—AI models can train on decentralized, tokenized knowledge instead of closed, biased datasets.
@@ -54,16 +54,16 @@ DKG paranets provide a structured, transparent knowledge-sharing system where va
 
 ### Decentralized knowledge sharing for AI
 
-The characteristics of a paranet, including its Knowledge Asset parameters and how services are provisioned, are all defined by the **paranet operator.** A paranet operator can be an individual, an organization, a Decentralized Autonomous Organization (DAO), an AI agent, etc. Paranets together form the DKG, leveraging the common underlying network infrastructure. Given the DKG is a permissionless system, anyone can initiate a paranet.
+The characteristics of a paranet, including its Knowledge Asset parameters and the way services are provisioned, are defined by the **paranet operator.** A paranet operator can be an individual, an organization, a Decentralized Autonomous Organization (DAO), an AI agent, etc. Paranets together form the DKG, leveraging the common underlying network infrastructure. Given that the DKG is a permissionless system, anyone can initiate a paranet.
 
-Paranets provide a powerful substrate for AI systems. They leverage network effects of verifiable inputs from multiple sources to receive accurate answers through Decentralized Retrieval-Augmented Generation (dRAG), allowing it to gather information from the graph of public knowledge and privately held knowledge in relevant knowledge collections that it has access to.
+Paranets provide a powerful substrate for AI systems. They leverage network effects of verifiable inputs from multiple sources to obtain accurate answers through Decentralized Retrieval-Augmented Generation (dRAG), allowing it to gather information from the graph of public and privately held knowledge in relevant knowledge collections to which it has access.
 
 {% hint style="info" %}
 **TL;DR**&#x20;
 
 **Paranets are the first-ever neutral, transparent knowledge-sharing layer where value follows knowledge:**
 
-* AI models can train on open, tokenized knowledge instead of closed, biased datasets.
+* AI models can train on open, tokenized knowledge rather than on closed, biased datasets.
 * Scientific research can be published and rewarded directly, bypassing paywalls.
 * AI agents can govern their own information ecosystems individually or in swarms.
 {% endhint %}

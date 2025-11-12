@@ -1,12 +1,12 @@
 # Customizing your DKG agent
 
-Each DKG node includes a **collocated neuro-symbolic AI agent** that combines neural model capabilities (e.g., LLMs) with symbolic reasoning over RDF-based graph data. This enables DKG nodes to not only publish and query semantic knowledge but also perform knowledge graph reasoning, summarization, and data transformation tasks directly on locally or remotely stored knowledge.
+Each DKG node includes a **collocated neuro-symbolic AI agent** that combines neural model capabilities (e.g., LLMs) with symbolic reasoning over RDF-based graph data. This enables DKG nodes not only to publish and query semantic knowledge but also to perform knowledge graph reasoning, summarization, and data transformation tasks directly on locally or remotely stored knowledge.
 
-The **DKG Agent** is built around a modular **plugin system** centered on the **Model Context Protocol (MCP)**. Plugins define how the agent interacts with external tools, APIs, and reasoning systems. A generic DKG Node ships with a base set of plugins for common operations- such as knowledge publishing, retrieval, and validation - **while developers can extend functionality by creating custom plugins**.&#x20;
+The **DKG Agent** is built around a modular **plugin system** centered on the **Model Context Protocol (MCP)**. Plugins define how the agent interacts with external tools, APIs, and reasoning systems. A generic DKG Node ships with a base set of plugins for common operations — such as knowledge publishing, retrieval, and validation — **while developers can extend functionality by creating custom plugins**.&#x20;
 
 ## Build your first plugin for the DKG Agent
 
-The rest of this page will focus on how you can build custom plugins for your DKG agent. For example, you might build a **Scientific Research** plugin to ingest papers and publish structured knowledge on the DKG, helping your agent drive research. Or a **Social Media** plugin to extract relevant posts, build a knowledge pool on the DKG, and run sentiment analysis.
+The rest of this page will focus on how you can build custom plugins for your DKG Agent. For example, you might build a **Scientific Research** plugin to ingest papers and publish structured knowledge on the DKG, helping your agent drive research. Or a **Social Media** plugin to extract relevant posts, build a knowledge pool on the DKG, and run sentiment analysis.
 
 ### Option 1: Create a custom plugin inside the DKG monorepo
 

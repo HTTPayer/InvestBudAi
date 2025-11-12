@@ -4,15 +4,15 @@
 This section assumes you have finished [Installation](decentralized-knowle-dge-graph-dkg.md) and will guide you through trying out the basic DKG Agent that comes bundled with the DKG Node.
 {% endhint %}
 
-Each DKG node includes a **collocated neuro-symbolic AI agent** that combines neural model capabilities (e.g., LLMs) with symbolic reasoning over RDF-based graph data. This enables DKG nodes to not only publish and query semantic knowledge but also perform knowledge graph reasoning, summarization, and data transformation tasks directly on locally or remotely stored knowledge.
+Each DKG node includes a **collocated neuro-symbolic AI agent** that combines neural model capabilities (e.g., LLMs) with symbolic reasoning over RDF-based graph data. This enables DKG nodes not only to publish and query semantic knowledge but also to perform knowledge graph reasoning, summarization, and data transformation tasks directly on locally or remotely stored knowledge.
 
-The **DKG Agent** is built around a modular **plugin system** centered on the **Model Context Protocol (MCP)**. Plugins define how the agent interacts with external tools, APIs, and reasoning systems. A generic DKG Node ships with a base set of plugins for common operations- such as knowledge publishing, retrieval, and validation - **while developers can extend functionality by creating custom plugins**.&#x20;
+The **DKG Agent** is built around a modular **plugin system** centered on the **Model Context Protocol (MCP)**. Plugins define how the agent interacts with external tools, APIs, and reasoning systems. A generic DKG Node ships with a base set of plugins for common operations — such as knowledge publishing, retrieval, and validation — **while developers can extend functionality by creating custom plugins**.&#x20;
 
 Each plugin may expose both **MCP endpoints** (for agentic interoperability) and **classic REST/gRPC APIs** (for programmatic access). Example plugin types include ontology-specific retrieval tools (e.g., “social media query” modules), **knowledge-mining pipelines** for crafting Knowledge Assets aligned with domain ontologies, and **reasoning plugins** that apply declarative rule sets to infer new knowledge.
 
 If you want to jump right into building your custom plugins, head over to the ["Build a DKG Node AI Agent"](../build-a-dkg-node-ai-agent/customizing-your-dkg-agent.md) section. The remainder of this section will familiarize you with the "boilerplate" DKG Node.
 
-## **Accessing and Using the DKG Agent Interface**
+## **Accessing and using the DKG Agent Interface**
 
 Your DKG Node comes with a built-in agent interface serving two core purposes:
 
@@ -48,7 +48,7 @@ Email: admin@example.com
 Password: admin123
 ```
 
-To create additional custom users with required scopes: at least `mcp` and `llm` (see [Configure access & security](security.md))
+To create additional custom users with required scopes: at least `mcp` and `llm` (see [Security](security.md))
 
 Authentication is based on OAuth 2.1.
 

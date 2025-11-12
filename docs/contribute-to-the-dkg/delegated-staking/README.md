@@ -44,9 +44,9 @@ Many Core Nodes can compete for the same TRAC reward on the basis of their total
 
 More details are presented in[ OT-RFC-21](https://github.com/OriginTrail/OT-RFC-repository/blob/main/RFCs/OT-RFC-21_Collective_Neuro-Symbolic_AI/OT-RFC-21%20Collective%20Neuro-Symbolic%20AI.pdf)
 
-After claiming the rewards, the rewards are **automatically restaked, increasing the Core Node's overall stake by the amount of collected rewards.**
+After claiming rewards, the rewards are **automatically restaked, increasing the Core Node's overall stake by the amount of rewards collected.**
 
-In order to introduce a level of predictability of network operations, withdrawing tokens is subject to an unbonding period of 28 days.
+To introduce a level of predictability into network operations, token withdrawals are subject to a 28-day unbonding period.
 
 {% hint style="warning" %}
 If you want to withdraw tokens in order to delegate to another node on the same network (blockchain), you **do not** have to wait 28 days! [See here >](redelegating-stake.md)&#x20;
@@ -63,8 +63,8 @@ Each Core Node operator can also set an “**operator fee,**” which is a perce
 {% hint style="info" %}
 **Example**: If a node accumulated **1,000 TRAC** tokens in the previous period, and the node has two delegators, both with a 50% share, and the operator\_fee is 10%:
 
-* the node operator will receive 100 TRAC (10%)
-* each delegator receives 450 TRAC (50% of the remaining 900 TRAC)
+* The node operator will receive 100 TRAC (10%)
+* Each delegator receives 450 TRAC (50% of the remaining 900 TRAC)
 {% endhint %}
 
 ***
@@ -118,6 +118,6 @@ To understand how to set up your operator fee, follow the [Core Node setup](../.
 
 ## **Have questions?**
 
-Drop by our [Discord](https://discord.com/invite/xCaY7hvNwD) or [Telegram group](https://t.me/origintrail), and feel free to ask your questions there. Make sure to follow our official announcements, and stay safe!
+Drop by our [Discord](https://discord.gg/aNpBjf97) or [Telegram group](https://t.me/origintrail), and feel free to ask your questions there. Make sure to follow our official announcements, and stay safe!
 
 Happy staking! 🚀

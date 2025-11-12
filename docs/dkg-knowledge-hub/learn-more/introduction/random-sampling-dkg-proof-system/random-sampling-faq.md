@@ -68,7 +68,7 @@ Both the V6 rewards and the Tuning Period (between V8.0.0 and V8.1.0) are proces
 
 **Who is eligible for V6 era rewards?**
 
-Nodes that were active during the DKG V6 period (before the V8 upgrade) are eligible to earn accumulated rewards from that era.  V6 rewards will be distributed via a compatibility module introduced in version V8.1.1, and are consolidated for the period of all 12 epochs in 2025 (1 year). Specifically, eligible nodes will submit proofs for upcoming epochs based on the same principles as those for V8 era rewards.&#x20;
+Nodes that were active during the DKG V6 period (before the V8 upgrade) are eligible to earn accumulated rewards from that era.  V6 rewards will be distributed via a compatibility module introduced in version V8.1.1, and consolidated over the period of all 12 epochs in 2025 (1 year). Specifically, eligible nodes will submit proofs for upcoming epochs using the same principles as for V8-era rewards.&#x20;
 
-Reward claiming for already elapsed epochs **will assume 100% uptime for that period (all nodes will have equal Node Health),** so nodes will compete on **Node Power**. Further technical details will be released with the V6 compatibility module release on the DKG testnet.
+Reward claiming for epochs that have already elapsed **will assume 100% uptime for that period (all nodes will have equal Node Health),** so nodes will compete on **Node Power**. Further technical details will be released with the V6 compatibility module release on the DKG testnet.
 

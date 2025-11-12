@@ -1,26 +1,26 @@
 # Installation
 
 {% hint style="info" %}
-If you are new to OriginTrail, DKG, knowledge graphs or blockchains we highly recommend you get familiarized with the [Key concepts](../dkg-key-concepts.md) before proceeding.&#x20;
+If you are new to OriginTrail, DKG, knowledge graphs, or blockchains, we highly recommend becoming familiar with the [DKG—Key concepts](../dkg-key-concepts.md) before proceeding.&#x20;
 {% endhint %}
 
 ### What are we installing today?
 
-You will be installing the **DKG Edge Node on your machine.** You can think of the DKG Edge Node as a framework for building neuro-symbolic AI agents based on the OriginTrail Decentralized Knowledge Graph. When you finish, a basic DKG based neuro-symbolic agent will be accessible through a user interface (chatbot), but also via MCP and a classic API. You will be able to customize it to your will by building plugins and extensions.
+You will be installing the **DKG Edge Node on your machine.** You can think of the DKG Edge Node as a framework for building neuro-symbolic AI agents based on the OriginTrail Decentralized Knowledge Graph. When you finish, a basic DKG-based neuro-symbolic agent will be accessible through a user interface (chatbot) and via MCP and a classic API. You will be able to customize it to your will by building plugins and extensions.
 
-To install the **DKG Edge Node**, we will be using the DKG CLI (`dkg-cli`) - a streamlined command-line interface that automates much of the process and project maintainance. The CLI will automatically install all **DKG Edge Node** components (DKG Agent, DKG Engine), including databases - by default MySQL, Redis and Blazegraph.
+To install the **DKG Edge Node**, we will be using the DKG CLI (`dkg-cli`) - a streamlined command-line interface that automates much of the process and project maintenance. The CLI will automatically install all **DKG Edge Node** components (DKG Agent, DKG Engine), including databases — by default MySQL, Redis, and Blazegraph.
 
 ### The DKG utilizes blockchain
 
 The DKG Network utilizes blockchains as a trusted environment for incentivisation and securing data exchanges. It's a multichain network, so DKG Nodes support 3 blockchains, but can currently be deployed on a **single blockchain at a time** (multichain deployment support is on the way).&#x20;
 
-If you're not too familiar with blockchain technology, and not sure which blockchain to pick to get started with the DKG Node, which one is better for you etc - don't worry, a default blockchain will be chosen for you and you will be able to learn as you go (the DKG Node abstracts a lot of the complexities of blockchain for you). You shouldn't notice a big differences between blockchains while you are in development - this choice  matters most when you are ready for your DKG Node deployment to mainnet.
+If you're not too familiar with blockchain technology, and not sure which blockchain to pick to get started with the DKG Node, which one is better for you etc - don't worry, a default blockchain will be chosen for you and you will be able to learn as you go (the DKG Node abstracts a lot of the complexities of blockchain for you). You shouldn't notice a big difference between blockchains while you are in development — this choice matters most when you are ready for your DKG Node deployment to mainnet.
 
-For now you need to know the following:
+For now, you need to know the following:
 
-* a DKG node requires a blockchain to run
-* because of that, it will require a set of crypto tokens - **TRAC** for DKG features, and the native token of the chosen blockchain (if you choose the default, it will be NEURO as the native token of Neuroweb)
-* this will not cost you - the development setup leverages the **DKG testnet,** which utilizes _test tokens_ which have no economic value and you can get for free (more info below). To run an agent on the **DKG Mainnet however**, you will need _"real"_ tokens
+* A DKG node requires a blockchain to run
+* Because of that, it will require a set of crypto tokens — **TRAC** for DKG features, and the native token of the chosen blockchain (if you choose the default, it will be NEURO as the native token of Neuroweb)
+* This will not cost you — the development setup leverages the **DKG testnet,** which utilizes _test tokens_ that have no economic value and you can get for free (more info below). To run an agent on the **DKG Mainnet,** however, you will need _"real"_ tokens
 
 ### What do you need for the installation?
 
@@ -30,7 +30,7 @@ For now you need to know the following:
 
 ### OK, let's go! <a href="#installation-steps" id="installation-steps"></a>
 
-#### 1. First install the DKG-CLI <a href="#id-1-install-cli" id="id-1-install-cli"></a>
+#### 1. First, install the DKG-CLI <a href="#id-1-install-cli" id="id-1-install-cli"></a>
 
 ```sh
 npm install -g dkg-cli
@@ -59,7 +59,7 @@ dkg-cli setup-config --testnet
 # dkg-cli setup-config --mainnet --gnosis     # Gnosis mainnet
 ```
 
-This will create an `.env` file with pre-generated DKG Node blockchain keys (learn more about DKG Node keys [here](../dkg-knowledge-hub/learn-more/node-keys-wallets.md)). This is done for convenience, you can change those keys if you'd like
+This will create an `.env` file with pre-generated DKG Node blockchain keys (learn more about DKG Node keys [here](../dkg-knowledge-hub/learn-more/node-keys-wallets.md)). This is done for convenience; you can change those keys if you'd like
 
 All DKG node wallets require native blockchain tokens, while the publishing wallet also requires TRAC tokens. Wallets generated by the setup command will be presented to you (as shown in the image below)
 
@@ -69,13 +69,13 @@ All DKG node wallets require native blockchain tokens, while the publishing wall
 
 As mentioned previously, your DKG Node requires tokens to be able to create Knowledge Assets. &#x20;
 
-**To get tokens for DKG testnet, use the** [**testnet token faucet**](../dkg-knowledge-hub/useful-resources/test-token-faucet.md)**.** For DKG Mainnet deployments we suggest visiting the [TRAC token](https://origintrail.io/technology/trac-token) page to check for its availability.
+**To get tokens for the DKG testnet, use the** [**testnet token faucet**](../dkg-knowledge-hub/useful-resources/test-token-faucet.md)**.** For DKG Mainnet deployments, we suggest visiting the [TRAC token](https://origintrail.io/technology/trac-token) page to check for its availability.
 
 {% hint style="warning" %}
-Make sure to fund your node keys with tokens before running the `dkg-cli install` command, otherwise your DKG node might not function correctly.  &#x20;
+Make sure to fund your node keys with tokens before running the `dkg-cli install` command; otherwise, your DKG node might not function correctly.  &#x20;
 {% endhint %}
 
-Here's an overview of supported blockchains and the needed tokens per key type.
+Here's an overview of supported blockchains and the required tokens per key type.
 
 | Blockchain | Operational keys | Publish keys |
 | ---------- | ---------------- | ------------ |
@@ -95,7 +95,7 @@ The installation can take a few minutes. It installs the DKG Node in the same di
 
 #### 5. Configure your DKG Agent <a href="#id-6-configure-agent" id="id-6-configure-agent"></a>
 
-Run the agent setup script to enable LLM features. You'll be prompted for your LLM provider, API key, model name, and DKG environment (must match your setup-config choice: testnet or mainnet). The agent supports multiple providers; examples listed below.
+Run the agent setup script to enable LLM features. You'll be prompted for your LLM provider, API key, model name, and DKG environment (must match your setup-config choice: testnet or mainnet). The agent supports multiple providers; examples are listed below.
 
 ```sh
 cd dkg-node/apps/agent
@@ -213,5 +213,5 @@ The following list provides an overview of which services are running locally an
 ### Support <a href="#support" id="support"></a>
 
 * 📖 [Documentation](https://docs.origintrail.io/)
-* 🐛 [Report Issues](https://github.com/OriginTrail/dkg-node-installer/issues)
-* 💬 [Discord Community](https://discord.gg/origintrail)
+* 🐛 [Report issues](https://github.com/OriginTrail/dkg-node-installer/issues)
+* 💬 [Discord community](https://discord.gg/aNpBjf97)

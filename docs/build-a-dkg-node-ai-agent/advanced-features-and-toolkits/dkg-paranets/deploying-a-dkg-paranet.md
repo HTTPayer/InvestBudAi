@@ -4,7 +4,7 @@ description: >-
   DKG
 ---
 
-# Deploy a Paranet
+# Deploy a paranet
 
 ### 1. Prepare for paranet deployment
 
@@ -97,5 +97,5 @@ To proceed, we recommend setting up a **DKG node** that will continuously sync y
 Additionally, you might want to consider [running an IPO](initial-paranet-offerings-ipos/) to incentivize knowledge miners.
 
 {% hint style="info" %}
-If you have been running a paranet on the previous V6 version of the DKG, your paranet will not automatically update to the new system. If you need help updating, please contact the core developers in [Discord](https://discord.gg/xCaY7hvNwD) for assistance.
+If you have been running a paranet on the previous V6 version of the DKG, your paranet will not automatically update to the new system. If you need help updating, please contact the core developers in [Discord](https://discord.gg/aNpBjf97) for assistance.
 {% endhint %}
