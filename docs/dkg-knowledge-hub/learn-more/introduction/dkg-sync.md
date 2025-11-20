@@ -44,7 +44,7 @@ The DKG Sync feature introduces **Batch GET**, a new network operation optimized
 
 These mechanisms ensure that even a freshly joined or recently restarted node can synchronize efficiently without overwhelming the network.
 
-### Sync Logic and resource considerations
+### Sync logic and resource considerations
 
 | Requirement              | Behavior                                                        |
 | ------------------------ | --------------------------------------------------------------- |

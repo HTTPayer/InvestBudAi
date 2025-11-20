@@ -6,8 +6,6 @@ description: >-
 
 # The DKG Node + MCP
 
-
-
 <figure><img src="../../../.gitbook/assets/MCP1.png" alt=""><figcaption></figcaption></figure>
 
 ## Using MCP on DKG Node
@@ -18,7 +16,7 @@ With MCP, your node can:
 
 * Publish knowledge as verifiable assets into the DKG.
 * Query trusted knowledge with provenance, ready to ground AI outputs.
-* Verify information, ensuring that what your AI consumes is authentic.
+* Verify the information your AI consumes to ensure it is authentic.
 
 Think of MCP as the universal language your AI tools use to talk to the DKG Node. If your framework or agent speaks MCP (LangChain, VS Code, Cursor, Copilot Studio, etc.), it can immediately tap into the DKG without extra setup.
 

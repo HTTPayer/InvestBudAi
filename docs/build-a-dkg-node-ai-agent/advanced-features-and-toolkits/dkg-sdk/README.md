@@ -27,7 +27,7 @@ The OriginTrail SDK currently comes in two forms:
 
 You can try out the SDK in two different ways:
 
-#### 1. Using Public DKG Nodes
+#### 1. Using public DKG Nodes
 
 Try the SDK with public DKG nodes by following the [Quickstart: Test Drive the DKG in 5 Minutes](https://docs.origintrail.io/build-with-dkg/quickstart-test-drive-the-dkg-in-5-mins) guide.
 
@@ -37,7 +37,7 @@ Set up a development environment using one of the following options:
 
 * **Deploy your node on the DKG testnet (recommended):**\
   This option allows you to quickly experiment with the SDK on a testnet of your choice.\
-  Follow the [Edge Node Deployment Guide](https://docs.origintrail.io/build-with-dkg/dkg-edge-node/setup-your-edge-node-development-environment) for setup instructions.
+  Follow the [Installation guide](../../../getting-started/decentralized-knowle-dge-graph-dkg.md) for setup instructions.
 * **Deploy your node on a local DKG network:**\
   Use this option to set up a fully localized development environment by following the [Development environment setup guide](setting-up-your-development-environment.md).
 

@@ -99,7 +99,7 @@ turbo gen plugin
 
 Once reviewed and merged, your plugin will be published to **npm** under the `@dkg/` namespace for the community to use.
 
-📖 To learn more about writing plugins, see [Create a custom plugin](broken-reference).
+📖 To learn more about writing plugins, see [Customizing your DKG agent](customizing-your-dkg-agent.md).
 
 ### Working with packages in the DKG Node monorepo
 

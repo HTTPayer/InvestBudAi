@@ -6,7 +6,7 @@ description: Javascript library for the Decentralized Knowledge Graph.
 
 If you are looking to build applications leveraging [Knowledge Assets](./#create-a-knowledge-asset) on the OriginTrail Decentralized Knowledge Graph (DKG), the dkg.js SDK library is the best place to start!
 
-The DKG SDK is used together with an **OriginTrail gateway node** to build applications that interface with the OriginTrail DKG  (the node is a dependency). Therefore, to use the SDK, you either need to run a gateway node on [your local environment](../setting-up-your-development-environment.md) or a [hosted OT-node](../../../../graveyard/everything/dkg-core-node/run-a-v8-core-node-on-testnet/).
+The DKG SDK is used together with an **OriginTrail gateway node** to build applications that interface with the OriginTrail DKG  (the node is a dependency). Therefore, to use the SDK, you either need to run a gateway node on [your local environment](../setting-up-your-development-environment.md) or a [hosted DKG Node](../../../../getting-started/decentralized-knowle-dge-graph-dkg.md).
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ Make sure to also include the **web3.js library**, as it is a dependency for dkg
 
 ### Using dkg.js in NodeJS apps
 
-Run the command to install dependency from the [NPM](https://www.npmjs.com/package/dkg.js) repository:
+Run the command to install the dependency from the [NPM](https://www.npmjs.com/package/dkg.js) repository:
 
 ```bash
 npm install dkg.js@latest
@@ -105,7 +105,7 @@ The system supports multiple blockchain networks, which can be configured using 
 * Hardhat1: hardhat1:31337
 * Hardhat2: hardhat2:31337
 
-The system uses default publicy available RPCs for each chain. However, because these RPCs are shared by many users, they can become overloaded, leading to errors—such as failures when creating a KA. To avoid this, we recommend using your own RPC if possible. You can set a custom RPC by passing `rpc: RPC_URL` in the blockchain options.
+The system uses default publicly available RPCs for each chain. However, because these RPCs are shared by many users, they can become overloaded, leading to errors — such as failures when creating a KA. To avoid this, we recommend using your own RPC if possible. You can set a custom RPC by passing `rpc: RPC_URL` in the blockchain options.
 
 ## Create a Knowledge Asset
 
@@ -380,7 +380,7 @@ The returned response will contain an array of n-quads:
 
 As the OriginTrail node leverages a fully fledged graph database (a triple store supporting RDF), you can run arbitrary SPARQL queries on it.&#x20;
 
-To learn more about querying the DKG go [here](../../querying-the-dkg.md).
+To learn more about querying the DKG, go [here](../../querying-the-dkg.md).
 
 ## **More on types of interaction with the DKG SDK**
 
@@ -394,9 +394,9 @@ Non-state-changing interactions with smart contracts are free and can be describ
 
 Smart contract transactions are state-changing operations. This means they change the state of the smart contract memory, which requires some blockchain-native gas tokens (such as ETH, NEURO, etc.).
 
-In order to perform state-changing operations, you need to use a wallet funded with gas tokens.
+To perform state-changing operations, you need to use a wallet funded with gas tokens.
 
-You can use default keys from the example below for hardhat blockchain:
+You can use the default keys from the example below for the Hardhat blockchain:
 
 ```javascript
 const PRIVATE_KEY="0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
@@ -404,5 +404,5 @@ const PUBLIC_KEY="0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
 ```
 
 {% hint style="warning" %}
-The default keys above should not be used anywhere except in a local environment for development.
+The default keys above should not be used anywhere except in a local development environment.
 {% endhint %}

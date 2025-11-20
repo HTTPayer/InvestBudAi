@@ -27,7 +27,7 @@ If you want **move your delegated TRAC stake from one DKG node to another**, you
 
 
 
-6. After clicking on 'Redelegate' a field to enter the amount of TRAC you wish to redelegate to another node will appear on the right side of the pop-up as well as the select-box for selecting the other node - the one that will receive the TRAC. **Enter the amount of TRAC you want redelegated and select the node you want to redelegate to.**&#x20;
+6. After clicking on 'Redelegate', a field to enter the amount of TRAC you wish to redelegate to another node will appear on the right side of the pop-up, as well as the select box, for selecting the other node — the one that will receive the TRAC. **Enter the amount of TRAC you want redelegated and select the node you want to redelegate to.**&#x20;
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-12-27 at 15.34.43.png" alt=""><figcaption></figcaption></figure>
 

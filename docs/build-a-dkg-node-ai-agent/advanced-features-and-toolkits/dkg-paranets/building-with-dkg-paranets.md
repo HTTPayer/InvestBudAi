@@ -1,4 +1,4 @@
-# Build with Paranets
+# Build with paranets
 
 Paranets are like "virtual" knowledge graphs on the OriginTrail Decentralized Knowledge Graph (DKG). Building with them is quite similar to building on the DKG in general. However, paranets enable you to contain your operations services on these "virtual" graphs, e.g., querying a specific paranet with SPARQL or adding a knowledge collection\* to a specific paranet.
 
@@ -6,15 +6,15 @@ Paranets are like "virtual" knowledge graphs on the OriginTrail Decentralized Kn
 \***A** **knowledge collection (KC)** is a **collection of Knowledge Assets.** It refers to structured data that can be stored, shared, and validated within a distributed network.
 {% endhint %}
 
-To gain access to the paranet knowledge graph, you can use one of the [public DKG nodes](../../../dkg-knowledge-hub/useful-resources/public-nodes.md), or deploy a [DKG node](../../../graveyard/everything/dkg-core-node/) and set it up to host the paranet (or "sync" it). More information is available on the [Sync a DKG Paranet](syncing-a-dkg-paranet.md) page.
+To gain access to the paranet knowledge graph, you can deploy a [DKG node](../../../getting-started/decentralized-knowle-dge-graph-dkg.md) and set it up to host the paranet (or "sync" it). More information is available on the [Sync a DKG Paranet](syncing-a-dkg-paranet.md) page.
 
-**A direct code example of paranets in use can be found here -** [**Paranet Demo**](https://github.com/OriginTrail/dkg.js/blob/v8/develop/examples/paranet-demo.js)
+**A direct code example of paranets in use can be found here —** [**Paranet Demo**](https://github.com/OriginTrail/dkg.js/blob/v8/develop/examples/paranet-demo.js)
 
 ### Querying paranets
 
-Once you have access to the paranet knowledge graph via a gateway node, you can use one of the [DKG SDKs](../dkg-sdk/) to interact with it. It is also possible to open up your triple store SPARQL endpoint directly and query the paranet knowledge graph in its own repository (the paranet repository name is equivalent to the paranet profile Knowledge Asset UAL, with dash characters instead of slash).&#x20;
+Once you have access to the paranet knowledge graph via a gateway node, you can use one of the [DKG SDKs](../dkg-sdk/) to interact with it. It is also possible to open your triple store SPARQL endpoint directly and query the paranet knowledge graph in its own repository (the paranet repository name is equivalent to the paranet profile Knowledge Asset UAL, with dash characters instead of slashes).&#x20;
 
-Using SPARQL, it is possible to query and integrate knowledge from multiple paranets and whole DKG in one query using SPARQL federated queries. &#x20;
+Using SPARQL, it is possible to query and integrate knowledge from multiple paranets and the entire DKG in a single query using SPARQL federated queries. &#x20;
 
 ### Running paranet services
 
@@ -30,11 +30,11 @@ There are three permission policies for paranet:
   * OPEN—Any node can sync the _paranet._
   * PERMISSIONED — Only approved nodes can sync the _paranet_.
 * Miners access policy—defines which knowledge miners can add knowledge to the _paranet_:
-  * OPEN—Any address can submit a knowledge asset to the _paranet._
-  * PERMISSIONED — Only approved addresses can submit a knowledge asset to the _paranet_.
-* Knowledge asset submission access policy:
-  * OPEN—Any knowledge asset can be added to the _paranet._
-  * STAGING—Knowledge miners first submit the knowledge asset to staging, where it is reviewed by curators chosen by the paranet owner. The curators can _approve_ (and automatically add knowledge asset to the paranet) or _deny_ staged knowledge asset(which then doesn't get added to the paranet).
+  * OPEN—Any address can submit a Knowledge Asset to the _paranet._
+  * PERMISSIONED — Only approved addresses can submit a Knowledge Asset to the _paranet_.
+* Knowledge Asset submission access policy:
+  * OPEN—Any Knowledge Asset can be added to the _paranet._
+  * STAGING—Knowledge miners first submit the Knowledge Asset to staging, where it is reviewed by curators chosen by the paranet owner. The curators can _approve_ (and automatically add a Knowledge Asset to the paranet) or _deny the_ staged Knowledge Asset (which then doesn't get added to the paranet).
 
 
 

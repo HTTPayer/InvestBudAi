@@ -8,7 +8,7 @@ Paranets are isolated environments within the DKG where participants can publish
 
 Relationships:
 
-* A Paranet contains multiple Knowledge Collections (KCs).
+* A paranet contains multiple Knowledge Collections (KCs).
 * Each KC contains multiple Knowledge Assets (KAs).
 * Each KA is stored in its own named graph.
 

@@ -5,19 +5,19 @@ description: >-
   key concepts below
 ---
 
-# DKG - Key concepts
+# DKG — Key concepts
 
 ## DKG Network & Nodes
 
-OriginTrail Decentralized Knowledge Graph (DKG) is a permissionless, multi-chain infrastructure designed to host and interlink semantically-rich “[Knowledge Assets](dkg-key-concepts.md#knowledge-assets)” - structured containers of machine-readable data (e.g., RDF-based graphs) that are discoverable, verifiable and owned by their creators.\
+OriginTrail Decentralized Knowledge Graph (DKG) is a permissionless, multi-chain infrastructure designed to host and interlink semantically-rich “[Knowledge Assets](dkg-key-concepts.md#knowledge-assets)” - structured containers of machine-readable data (e.g., RDF-based graphs) that are discoverable, verifiable, and owned by their creators.\
 \
-The DKG enables AI-agents and applications to query, connect and build upon distributed knowledge while preserving provenance and trust through blockchain-anchored proof systems.
+The DKG enables AI-agents and applications to query, connect, and build upon distributed knowledge while preserving provenance and trust through blockchain-anchored proof systems.
 
-The DKG Network is comprised of network nodes, running on different servers and devices. **There are two primary node types that enable the network’s operation**. The first is **the DKG Core Node**, which hosts the public DKG, persistently stores and serves knowledge assets, participates in random-sampling proofs and token incentives, and requires a minimum stake (e.g., 50 000 TRAC) to participate.\
+The DKG Network is comprised of network nodes, running on different servers and devices. **There are two primary node types that enable the network’s operation**. The first is **the DKG Core Node**, which hosts the public DKG, persistently stores and serves knowledge assets, participates in random-sampling proofs and token incentives, and requires a minimum stake (e.g., 50,000 TRAC) to participate.\
 \
 The second is the **DKG Edge Node**, which runs on devices at the “edge” (e.g., laptops, phones, IoT, and even servers, if deployed that way) and enables local knowledge processing, private-graph handling, and integration with AI-pipelines (via APIs like dRAG), allowing owners to retain control of their data while still contributing to the global DKG.&#x20;
 
-Together Core and Edge Nodes form the network and exchange knowledge, facilitated by the blockchain. They share the same codebase however, so **it is possible to turn a DKG Edge Node into a DKG Core node (more on that later in the docs)**.
+Together, Core and Edge Nodes form the network and exchange knowledge, facilitated by the blockchain. They share the same codebas,e however, so **it is possible to turn a DKG Edge Node into a DKG Core node (more on that later in the docs)**.
 
 ## Knowledge Assets
 
@@ -34,11 +34,11 @@ More precisely, a Knowledge Asset is a web resource identified by a unique Unifo
 
 <figure><img src=".gitbook/assets/Screenshot 2024-06-13 at 22.59.48.png" alt=""><figcaption></figcaption></figure>
 
-Knowledge content can be observed as a time series of knowledge content states or **assertions**. Each assertion can be independently verified for integrity, by recomputing the cryptographic fingerprint by the verifier and comparing if the computed result matches with the corresponding blockchain fingerprint record.
+Knowledge content can be observed as a time series of knowledge content states or **assertions**. Each assertion can be independently verified for integrity by the verifier recomputing the cryptographic fingerprint and comparing if the computed result matches the corresponding blockchain fingerprint record.
 
-Technically, an assertion is represented using the n-quads serialization and a cryptographic fingerprint (n-quads graph Merkle root, stored immutably on the blockchain) for assertion verification.
+Technically, an assertion is represented using the n-quads serialization and a cryptographic fingerprint (the n-quads graph Merkle root, stored immutably on the blockchain) for assertion verification.
 
-**Knowledge Assets** can be both **public and private.** Public assertion data is replicated on the OriginTrail Decentralized Network and publicly available, while private assertion data is contained within the private domain of the asset owner (e.g., an OriginTrail node hosted by the asset owner, such as a person or company).
+**Knowledge Assets** can be both **public and private.** Public assertion data is replicated on the OriginTrail Decentralized Network and publicly available, while private assertion data is contained within the asset owner's private domain (e.g., an OriginTrail node hosted by the asset owner, such as a person or company).
 
 In summary, a Knowledge Asset is a combination of an NFT record and a semantic record. Using the dkg.js SDK, you can perform CRUT (create, read, update, transfer) operations on Knowledge Assets, which are explained below in further detail.
 
@@ -127,4 +127,4 @@ The next building block of the DKG is **AI para-networks** or **paranets**.
 
 **AI para-networks** or **paranets** are autonomously operated structures in the DKG, owned by their community as a paranet operator. In paranets, we find **assemblies of Knowledge Assets** driving use cases with associated **paranet-specific AI services** and an **incentivization model** to reward knowledge miners fueling its growth.&#x20;
 
-**To see the DKG in action, continue to the** [**Quickstart section**](broken-reference)**.**
+**To see the DKG in action, continue to the** [**Installation section**](getting-started/decentralized-knowle-dge-graph-dkg.md)**.**

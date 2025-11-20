@@ -17,5 +17,5 @@ As a **paranet operator**, funding the pool helps ensure that all key participan
 {% endhint %}
 
 {% hint style="success" %}
-Have any questions or feedback for this page? Hop into our [Discord channel](https://discord.com/invite/qRc4xHpFnN) and get in touch
+Have any questions or feedback for this page? Hop into our [Discord channel](https://discord.gg/aNpBjf97) and get in touch
 {% endhint %}

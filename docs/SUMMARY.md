@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [DKG - Key concepts](dkg-key-concepts.md)
+* [DKG — Key concepts](dkg-key-concepts.md)
 
 ## Getting Started
 
@@ -31,9 +31,9 @@
     * [DKG Python SDK (dkg.py)](build-a-dkg-node-ai-agent/advanced-features-and-toolkits/dkg-sdk/dkg-v8-py-client/README.md)
       * [Interact with DKG paranets](build-a-dkg-node-ai-agent/advanced-features-and-toolkits/dkg-sdk/dkg-v8-py-client/interact-with-dkg-paranets.md)
   * [Paranets](build-a-dkg-node-ai-agent/advanced-features-and-toolkits/dkg-paranets/README.md)
-    * [Deploy a Paranet](build-a-dkg-node-ai-agent/advanced-features-and-toolkits/dkg-paranets/deploying-a-dkg-paranet.md)
-    * [Build with Paranets](build-a-dkg-node-ai-agent/advanced-features-and-toolkits/dkg-paranets/building-with-dkg-paranets.md)
-    * [Sync a Paranet](build-a-dkg-node-ai-agent/advanced-features-and-toolkits/dkg-paranets/syncing-a-dkg-paranet.md)
+    * [Deploy a paranet](build-a-dkg-node-ai-agent/advanced-features-and-toolkits/dkg-paranets/deploying-a-dkg-paranet.md)
+    * [Build with paranets](build-a-dkg-node-ai-agent/advanced-features-and-toolkits/dkg-paranets/building-with-dkg-paranets.md)
+    * [Sync a paranet](build-a-dkg-node-ai-agent/advanced-features-and-toolkits/dkg-paranets/syncing-a-dkg-paranet.md)
     * [Initial Paranet Offerings (IPOs)](build-a-dkg-node-ai-agent/advanced-features-and-toolkits/dkg-paranets/initial-paranet-offerings-ipos/README.md)
       * [IPO specification](build-a-dkg-node-ai-agent/advanced-features-and-toolkits/dkg-paranets/initial-paranet-offerings-ipos/ipo-specification.md)
       * [Launch an IPO](build-a-dkg-node-ai-agent/advanced-features-and-toolkits/dkg-paranets/initial-paranet-offerings-ipos/launching-your-ipo.md)
@@ -43,6 +43,8 @@
 
 ## Contribute to the DKG&#x20;
 
+* [Hackathon: Scaling Trust in the Age of AI](contribute-to-the-dkg/hackathon-scaling-trust-in-the-age-of-ai/README.md)
+  * [DKG Social Graph Query Guide](contribute-to-the-dkg/hackathon-scaling-trust-in-the-age-of-ai/dkg-social-graph-query-guide.md)
 * [Delegated staking](contribute-to-the-dkg/delegated-staking/README.md)
   * [Step-by-step staking](contribute-to-the-dkg/delegated-staking/step-by-step-staking.md)
   * [Redelegating stake](contribute-to-the-dkg/delegated-staking/redelegating-stake.md)
@@ -66,7 +68,7 @@
 
 * [Learn more](dkg-knowledge-hub/learn-more/README.md)
   * [Understanding OriginTrail](dkg-knowledge-hub/learn-more/readme/README.md)
-    * [The OriginTrail Decentralized Knowledge Graph (DKG)](dkg-knowledge-hub/learn-more/readme/decentralized-knowle-dge-graph-dkg.md)
+    * [OriginTrail Decentralized Knowledge Graph (DKG)](dkg-knowledge-hub/learn-more/readme/decentralized-knowle-dge-graph-dkg.md)
     * [Development principles](dkg-knowledge-hub/learn-more/readme/development-principles.md)
     * [Linked data & knowledge graphs](dkg-knowledge-hub/learn-more/readme/kg.md)
     * [Core DKG concepts](dkg-knowledge-hub/learn-more/readme/dkg-key-concepts.md)
@@ -82,7 +84,7 @@
       * [Random Sampling rollout](dkg-knowledge-hub/learn-more/introduction/random-sampling-dkg-proof-system/random-sampling-rollout.md)
       * [Random Sampling FAQ](dkg-knowledge-hub/learn-more/introduction/random-sampling-dkg-proof-system/random-sampling-faq.md)
     * [Rules & token thresholds](dkg-knowledge-hub/learn-more/introduction/rules-and-token-thresholds.md)
-  * [Connected Blockchains](dkg-knowledge-hub/learn-more/connected-blockchains/README.md)
+  * [Connected blockchains](dkg-knowledge-hub/learn-more/connected-blockchains/README.md)
     * [NeuroWeb Parachain](dkg-knowledge-hub/learn-more/connected-blockchains/neuroweb.md)
     * [Base Network (L2)](dkg-knowledge-hub/learn-more/connected-blockchains/base-blockchain/README.md)
       * [Connect to Base](dkg-knowledge-hub/learn-more/connected-blockchains/base-blockchain/connect-to-base.md)
