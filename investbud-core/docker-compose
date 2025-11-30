@@ -1,0 +1,77 @@
+---
+version: "2.0"
+services:
+  service-1:
+    image: brandynham/macrocrypto-api:latest
+    expose:
+      - port: 8015
+        as: 80
+        to:
+          - global: true
+        http_options:
+          max_body_size: 1048576
+          read_timeout: 300000
+          send_timeout: 300000
+          next_cases:
+            - error
+            - timeout
+          next_tries: 3
+          next_timeout: 60000
+    env:
+
+  service-2:
+    image: postgres:15-alpine
+    expose:
+      - port: 5432
+        as: 80
+        to:
+          - global: true
+          - service: service-1
+    env:
+   
+    params:
+      storage:
+        data:
+          mount: /mnt/data
+          readOnly: false
+profiles:
+  compute:
+    service-1:
+      resources:
+        cpu:
+          units: 0.5
+        memory:
+          size: 512Mi
+        storage:
+          - size: 1Gi
+    service-2:
+      resources:
+        cpu:
+          units: 0.25
+        memory:
+          size: 512Mi
+        storage:
+          - size: 1Gi
+          - name: data
+            size: 2Gi
+            attributes:
+              persistent: true
+              class: beta3
+  placement:
+    dcloud:
+      pricing:
+        service-1:
+          denom: ibc/170C677610AC31DF0904FFE09CD3B5C657492170E7E52372E48756B71E56F2F1
+          amount: 100000
+        service-2:
+          denom: ibc/170C677610AC31DF0904FFE09CD3B5C657492170E7E52372E48756B71E56F2F1
+          amount: 100000
+deployment:
+  service-1:
+    dcloud:
+      profile: service-1
+      count: 1
+  service-2:
+    dcloud:
+      profile: service-2
+      count: 1

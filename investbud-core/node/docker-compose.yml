@@ -1,0 +1,166 @@
+version: '3.8'
+
+services:
+  # ============================================
+  # DKG Agent - Web UI + API + MCP Server
+  # ============================================
+  dkg-agent:
+    image: brandynham/dkg-node:latest
+    container_name: dkg-agent
+    restart: unless-stopped
+    ports:
+      - "9200:9200"
+      - "8081:8081"
+    environment:
+      - NODE_ENV=production
+      - PORT=9200
+      - DATABASE_URL=/app/data/dkg.db
+      - DKG_BLOCKCHAIN=${DKG_BLOCKCHAIN:-otp:20430}
+      - DKG_OTNODE_URL=http://dkg-engine:8900
+      - DKG_PUBLISH_WALLET=${DKG_PUBLISH_WALLET}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LLM_PROVIDER=${LLM_PROVIDER:-openai}
+      - LLM_MODEL=${LLM_MODEL:-gpt-4o-mini}
+    volumes:
+      - dkg-agent-data:/app/data
+    depends_on:
+      dkg-engine:
+        condition: service_healthy
+    networks:
+      - dkg-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9200/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # ============================================
+  # DKG Engine (ot-node) - Core DKG functionality
+  # ============================================
+  dkg-engine:
+    image: origintrail/ot-node:latest
+    container_name: dkg-engine
+    restart: unless-stopped
+    ports:
+      - "8900:8900"
+      - "9000:9000"
+    environment:
+      - NODE_ENV=testnet
+      - RPC_ENDPOINT_BC1=${RPC_ENDPOINT:-https://lofar-testnet.origin-trail.network}
+      - OPERATIONAL_WALLET_PUBLIC_KEY=${OPERATIONAL_WALLET_PUBLIC_KEY}
+      - OPERATIONAL_WALLET_PRIVATE_KEY=${OPERATIONAL_WALLET_PRIVATE_KEY}
+      - MANAGEMENT_WALLET_PUBLIC_KEY=${MANAGEMENT_WALLET_PUBLIC_KEY}
+      - MANAGEMENT_WALLET_PRIVATE_KEY=${MANAGEMENT_WALLET_PRIVATE_KEY}
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-dkg_password}
+      - MYSQL_DATABASE=ot_node_db
+      - TRIPLESTORE_HOST=blazegraph
+      - TRIPLESTORE_PORT=9999
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    volumes:
+      - dkg-engine-data:/ot-node/data
+    depends_on:
+      mysql:
+        condition: service_healthy
+      blazegraph:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - dkg-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8900/v1/info"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+
+  # ============================================
+  # MySQL Database
+  # ============================================
+  mysql:
+    image: mysql:8.0
+    container_name: dkg-mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD:-dkg_password}
+      - MYSQL_DATABASE=ot_node_db
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - dkg-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_PASSWORD:-dkg_password}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    command: --default-authentication-plugin=mysql_native_password
+
+  # ============================================
+  # Blazegraph Triple Store
+  # ============================================
+  blazegraph:
+    image: openkbs/blazegraph:latest
+    container_name: dkg-blazegraph
+    restart: unless-stopped
+    ports:
+      - "9999:9999"
+    volumes:
+      - blazegraph-data:/var/lib/blazegraph
+    networks:
+      - dkg-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9999/blazegraph/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # ============================================
+  # Redis (for BullMQ job queues)
+  # ============================================
+  redis:
+    image: redis:7-alpine
+    container_name: dkg-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - dkg-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: redis-server --appendonly yes
+
+# ============================================
+# Volumes
+# ============================================
+volumes:
+  dkg-agent-data:
+    driver: local
+  dkg-engine-data:
+    driver: local
+  mysql-data:
+    driver: local
+  blazegraph-data:
+    driver: local
+  redis-data:
+    driver: local
+
+# ============================================
+# Networks
+# ============================================
+networks:
+  dkg-network:
+    driver: bridge

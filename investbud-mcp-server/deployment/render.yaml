@@ -1,0 +1,29 @@
+{
+  "$schema": "https://render.com/schema/render.yaml",
+  "services": [
+    {
+      "type": "web",
+      "name": "investbud-mcp",
+      "env": "node",
+      "region": "oregon",
+      "plan": "starter",
+      "buildCommand": "npm install && npm run build",
+      "startCommand": "npm start",
+      "envVars": [
+        {
+          "key": "PORT",
+          "value": "3030"
+        },
+        {
+          "key": "NODE_ENV",
+          "value": "production"
+        },
+        {
+          "key": "WALLET_PRIVATE_KEY",
+          "sync": false
+        }
+      ],
+      "healthCheckPath": "/"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+---
+version: "2.0"
+services:
+  api:
+    image: brandynham/macrocrypto-api:v0.1.2-20251128201927
+    expose:
+      - port: 8015
+        as: 80
+        accept: 
+          - api.investbudai.xyz
+        to:
+          - global: true
+        http_options:
+          max_body_size: 1048576
+          read_timeout: 300000
+          send_timeout: 300000
+          next_cases:
+            - error
+            - timeout
+          next_tries: 3
+          next_timeout: 60000
+    env:
+      - PAYTO_ADDRESS=0x1d4ba461fdba577dfe0400252cdf462e5a1ff13f
+      - >-
+        DATABASE_URL=postgresql://macrocrypto:earg4y5hb5416#$%@postgres:5432/macrocrypto
+      - FRED_API_KEY=af3aeb14543cb05941f1b87abc3e3b7b
+      - COINGECKO_API_KEY=CG-EnpGk7ygmUR2AK785XF3UAsZ
+      - ALCHEMY_API_KEY=RGdonbHyjNzV5McbhRpfy
+      - PAYMENT_NETWORK=base-sepolia
+      - BASE_SEPOLIA_RPC_URL=https://base-sepolia.g.alchemy.com/v2/RGdonbHyjNzV5McbhRpfy
+      - SERVER_API_KEY=x402-base-workshop-key-2025
+      - DKG_NODE_ENDPOINT=https://v6-pegasus-node-02.origin-trail.network:8900
+      - DKG_BLOCKCHAIN_ID=otp:20430
+      - ORACLE_SIGNER_ADDRESS=0x85bADB8118f98b6AD8eaB5880c8829AF8adA44cF
+      - >-
+        CLIENT_PRIVATE_KEY=0x40d6a7026d6f8db1a9d23768dd5f547ac7c552f459b63fabcbbe600eb8dcf2d9
+      - >-
+        PRIVATE_KEY=aa108015f5a2c574da1e338baded6d85ba6909cbc6aaf4db7656947685239e88
+  postgres:
+    image: postgres:15-alpine
+    expose:
+      - port: 5432
+        as: 5432
+        to:
+          - global: false
+          - service: api
+    env:
+      - POSTGRES_USER=macrocrypto
+      - POSTGRES_PASSWORD=earg4y5hb5416#$%
+      - POSTGRES_DB=macrocrypto
+    params:
+      storage:
+        data:
+          mount: /mnt/data
+          readOnly: false
+profiles:
+  compute:
+    api:
+      resources:
+        cpu:
+          units: 0.5
+        memory:
+          size: 512Mi
+        storage:
+          - size: 1Gi
+    postgres:
+      resources:
+        cpu:
+          units: 0.25
+        memory:
+          size: 512Mi
+        storage:
+          - size: 1Gi
+          - name: data
+            size: 2Gi
+            attributes:
+              persistent: true
+              class: beta3
+  placement:
+    dcloud:
+      pricing:
+        api:
+          denom: ibc/170C677610AC31DF0904FFE09CD3B5C657492170E7E52372E48756B71E56F2F1
+          amount: 100000
+        postgres:
+          denom: ibc/170C677610AC31DF0904FFE09CD3B5C657492170E7E52372E48756B71E56F2F1
+          amount: 100000
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+        allOf: []
+deployment:
+  api:
+    dcloud:
+      profile: api
+      count: 1
+  postgres:
+    dcloud:
+      profile: postgres
+      count: 1

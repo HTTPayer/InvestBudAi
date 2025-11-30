@@ -1,0 +1,54 @@
+{
+   "name": "investbud-mcp-server",
+   "version": "0.1.0",
+   "description": "MCP server exposing InvestBud tools (macro regime, portfolio analysis, advisory, performance) with mandatory x402 payments.",
+   "main": "dist/server.js",
+   "type": "module",
+   "scripts": {
+      "dev": "tsx src/server.ts",
+      "build": "tsc",
+      "start": "node dist/server.js",
+      "start:stdio": "node dist/server.js --stdio",
+      "test": "tsx src/services/clienttest.ts",
+      "news": "tsx src/services/clienttest.ts news",
+      "test:bridge": "npm run build && node test-payment-bridge.js",
+      "test:full": "npm run build && node test-full-flow.js",
+      "docker:build": "docker build -t investbud-mcp .",
+      "docker:run": "docker run -p 3030:3030 --env-file .env investbud-mcp",
+      "docker:compose": "docker-compose up -d"
+   },
+   "keywords": [
+      "mcp",
+      "model-context-protocol",
+      "x402",
+      "crypto",
+      "defi",
+      "ai",
+      "claude",
+      "investbud",
+      "web3"
+   ],
+   "author": "HTTPayer",
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/HTTPayer/investbud-MCP-Server"
+   },
+   "license": "MIT",
+   "dependencies": {
+      "@modelcontextprotocol/sdk": "^1.23.0",
+      "@types/express": "^5.0.5",
+      "axios": "^1.13.2",
+      "dotenv": "^17.2.3",
+      "express": "^5.1.0",
+      "undici": "^7.16.0",
+      "viem": "^2.40.3",
+      "x402-axios": "^0.7.2",
+      "x402-fetch": "^0.7.3",
+      "zod": "^4.1.13"
+   },
+   "devDependencies": {
+      "@types/node": "^24.10.1",
+      "tsx": "^4.20.6",
+      "typescript": "^5.9.3"
+   }
+}

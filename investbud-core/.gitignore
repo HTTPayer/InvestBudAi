@@ -1,0 +1,170 @@
+# =============================================================================
+# Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+wheels/
+*.egg-info/
+*.egg
+.eggs/
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+*.venv/
+*/.venv/
+
+# =============================================================================
+# Environment & Secrets (NEVER COMMIT)
+# =============================================================================
+.env
+*.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+**/secrets/
+credentials.json
+
+# =============================================================================
+# IDE & Editors
+# =============================================================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# =============================================================================
+# OS Files
+# =============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# =============================================================================
+# Node.js
+# =============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# =============================================================================
+# Jupyter Notebooks
+# =============================================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# =============================================================================
+# Cache & Generated Files
+# =============================================================================
+cache/
+*.cache
+.cache/
+*.db
+*.log
+logs/
+output/
+tmp/
+temp/
+
+# =============================================================================
+# Data Files (generated, not source)
+# =============================================================================
+*.csv
+!analytics/data/*.csv
+
+# =============================================================================
+# Foundry (Solidity)
+# =============================================================================
+contracts/lib/
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+
+# =============================================================================
+# Claude Code
+# =============================================================================
+.claude/
+
+# =============================================================================
+# Documentation (only track essential READMEs)
+# =============================================================================
+*.md
+!README.md
+!backend/README.md
+!backend/docs/DKG_INTEGRATION.md
+!backend/docs/DKG_CONFIRMING_NODE.md
+!client/README.md
+!contracts/README.md
+!analytics/README.md
+!backend/docs/FINANCIAL_METHODOLOGY.md
+!gcn/README.md
+
+# =============================================================================
+# Project-specific
+# =============================================================================
+
+# DKG Node (separate repo, don't embed)
+node/dkg-node/
+
+# Windows null device file
+nul
+
+# Notes (personal, not for repo)
+notes.txt
+**/notes.txt
+TODO.txt
+
+# Model files (large, can be regenerated)
+# Uncomment if you don't want to track models
+# models/*.pkl
+# models/*.joblib
+
+# DKG cache files
+backend/cache/*.pkl
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Lock files (optional - uncomment if you want to ignore)
+# uv.lock
+# package-lock.json

@@ -1,0 +1,97 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log
+pnpm-debug.log*
+.cache/
+.next/
+.out/
+dist/
+build/
+!.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+.env.example
+env.bak/
+pip-wheel-metadata/
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+.mypy_cache/
+.pyre/
+
+# Logs
+logs/
+*.log
+
+# Editor/IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.iml
+
+# Docker
+docker-compose.override.yml
+docker-compose.*.local.yml
+
+# CI / tooling
+coverage/
+coverage.xml
+reports/
+*.seed
+*.pid
+*.pid.lock
+
+# Secrets / keys / credentials
+*.pem
+*.key
+*.crt
+credentials/
+secrets.yml
+private.pem
+*.p12
+
+# Build / compiled files
+*.o
+*.so
+*.dll
+*.exe
+*.class
+target/
+build/
+
+# Archives and packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.zip
+*.tar
+*.egg-info/
+dist-info/
+
+# Misc
+/*.log
+*.sqlite3
+.idea/
+.vagrant/

@@ -1,0 +1,39 @@
+---
+version: "2.0"
+services:
+  service-1:
+    image: brandynham/macrocrypto-confirming-node:v0.1.2-20251128160729
+    expose:
+      - port: 80
+        as: 80
+        to:
+          - global: true
+    env:
+      - ORACLE_SIGNER_ADDRESS=0x85bADB8118f98b6AD8eaB5880c8829AF8adA44cF
+      - VERIFIER_ADDRESS=0x417dE910F1AfbA54A7eB623be7AEC02d2c46754c
+      - >-
+        CLIENT_PRIVATE_KEY=0x40d6a7026d6f8db1a9d23768dd5f547ac7c552f459b63fabcbbe600eb8dcf2d9
+      - >-
+        ORACLE_API_URL=https://r3467d7khd8b94sfguhrr273lo.ingress.akashprovid.com
+      - DKG_NODE_ENDPOINT=https://v6-pegasus-node-02.origin-trail.network:8900
+profiles:
+  compute:
+    service-1:
+      resources:
+        cpu:
+          units: 0.1
+        memory:
+          size: 512Mi
+        storage:
+          - size: 1Gi
+  placement:
+    dcloud:
+      pricing:
+        service-1:
+          denom: ibc/170C677610AC31DF0904FFE09CD3B5C657492170E7E52372E48756B71E56F2F1
+          amount: 100000
+deployment:
+  service-1:
+    dcloud:
+      profile: service-1
+      count: 1

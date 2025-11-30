@@ -1,0 +1,95 @@
+version: "3.8"
+
+services:
+  # ==========================================================================
+  # MacroCrypto API Server
+  # ==========================================================================
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: macrocrypto-api
+    ports:
+      - "${PORT:-8015}:8015"
+    env_file:
+      - .env
+    environment:
+      # Override DATABASE_URL to use docker network
+      DATABASE_URL: postgresql://macrocrypto:${POSTGRES_PASSWORD:-secret}@postgres:5432/macrocrypto
+    volumes:
+      # Persist trained models
+      - ./backend/models:/app/backend/models
+      # Persist cache
+      - ./backend/cache:/app/backend/cache
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - macrocrypto-network
+    restart: unless-stopped
+
+  # ==========================================================================
+  # PostgreSQL Database (for chat sessions)
+  # ==========================================================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: macrocrypto-postgres
+    environment:
+      POSTGRES_USER: macrocrypto
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-secret}
+      POSTGRES_DB: macrocrypto
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - macrocrypto-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U macrocrypto -d macrocrypto"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ==========================================================================
+  # Graph Confirming Node (DKG Verifier)
+  # ==========================================================================
+  confirming-node:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.confirming-node
+    container_name: macrocrypto-confirming-node
+    env_file:
+      - .env
+    environment:
+      # DKG node endpoint
+      DKG_NODE_ENDPOINT: ${DKG_NODE_ENDPOINT:-https://v6-pegasus-node-02.origin-trail.network:8900}
+      # Oracle API to poll for new snapshots
+      ORACLE_API_URL: http://api:8015
+      # Verifier address (your Ethereum address)
+      VERIFIER_ADDRESS: ${VERIFIER_ADDRESS}
+      # Official oracle signer address
+      ORACLE_SIGNER_ADDRESS: ${ORACLE_SIGNER_ADDRESS}
+      # Model path
+      MODEL_PATH: models/regime_classifier.pkl
+      # Poll interval in seconds (default 1 hour)
+      POLL_INTERVAL: ${POLL_INTERVAL:-3600}
+    volumes:
+      # Share models with API
+      - ./backend/models:/app/models:ro
+      # Share cache for data
+      - ./backend/cache:/app/cache
+    depends_on:
+      - api
+    networks:
+      - macrocrypto-network
+    restart: unless-stopped
+
+networks:
+  macrocrypto-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+    driver: local

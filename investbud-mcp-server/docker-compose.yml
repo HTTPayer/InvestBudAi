@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  investbud-mcp:
+    build: .
+    ports:
+      - "3030:3030"
+    environment:
+      - PORT=3030
+      - WALLET_PRIVATE_KEY=${WALLET_PRIVATE_KEY}
+      - INVESTBUD_BASE_URL=${INVESTBUD_BASE_URL:-https://r3467d7khd8b94sfguhrr273lo.ingress.akashprovid.com}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3030/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

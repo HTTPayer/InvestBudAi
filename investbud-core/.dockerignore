@@ -1,0 +1,69 @@
+# Virtual environments
+.venv/
+*/.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment files (secrets)
+.env
+*/.env
+
+# Git
+.git/
+.gitignore
+.gitmodules
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node.js (client not needed in backend container)
+client/
+node_modules/
+package-lock.json
+
+# Analytics (not needed in backend container)
+analytics/
+
+# Generated data files
+*.csv
+*.pkl
+*.log
+
+# Cache directories
+cache/
+output/
+.cache/
+__pycache__/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts (keep contracts/out for ABI)
+backend/build/
+backend/dist/
+backend/*.egg-info/
+
+# Foundry cache (keep out/ for ABI)
+contracts/cache/
+contracts/lib/
+
+# Documentation
+*.md
+!backend/README.md
+
+# Test files
+tests/
+*_test.py
+test_*.py
+
+# Claude config
+.claude/
